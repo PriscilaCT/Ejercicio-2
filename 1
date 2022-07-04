@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML</title>
+<meta charset="UTF-8">
+<meta name="keywords" content="JS,CSS,HTML">
+<meta name="Author" content="Priscila">
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+</head>
+<body>
+<h1>Ejercicio 2</h1>
+<section>
+<h3>Consulta</h3>
+<b>Tabla de datos</b>
+
+<table>
+<thead>
+<tr>
+<th> Nombre del alumno/a </th>
+<th> Materia </th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+</section>
+<section>
+<hr>
+<h2>Insertar datos del alumno/a</h2>
+
+<center> 
+<label for="nombre ">Nombre Completo: </label>
+<input type="text" id="nombre">
+<br><br>
+<label for="materia">Materia:</label>
+<select name="mat" id="materia">
+<option value="Calculo Integral">Cálculo Integral</option>
+<option value="Mecánica II">Mecánica II</option>
+<option value="Dibujo Asistido por Comp">Dibujo Asistido por Comp.</option>
+<option value="Laboratorio de Elect.">Laboratorio de Elect.</option>
+<option value="Máquinas Sincronas">Máquinas Sincronas.</option>
+<option value="Planeación y control de la Prod">Planeación y control de la Prod.</option>
+<option value="Sistemas Elect. Lineales">Sistemas Elect. Lineales </option>
+</select>
+</center>
+<br>
+<br>
+<center>
+ <button id="mostrar" onclick="funcionb1();">Actualizar</button>
+</center>
+
+
+<br>
+</section>
+
+<script>
+function funcionb1 () {
+var x = document.getElementById("nombre").value;
+var y = document.getElementById("materia").value;
+if (x == "") {
+    alert("Colocar nombre completo");
+    
+  }
+  else{
+   alert("Se han actualizado los datos");
+   markup = "<tr><td>"
+          + x + "</td><td>"+y+"</td></tr>";
+        tableBody = $("table tbody");
+        tableBody.append(markup);
+   }
+}
+</script>
+
+
+</body>
+</html>
